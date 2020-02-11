@@ -1,4 +1,4 @@
-Hooks.on("renderSceneSheet", (app, html, data) => {
+Hooks.on("renderSceneConfig", (app, html, data) => {
     const gmFlag = app.entity.getFlag("gm-bg", "gm-img");
     const pcFlag = app.entity.getFlag("gm-bg", "pc-img");
     const bg = app.entity.img;
