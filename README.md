@@ -1,4 +1,4 @@
-![https://img.shields.io/badge/Foundry%20VTT-0.4.4%2B-green](https://img.shields.io/badge/Foundry%20VTT-0.4.4%2B-green)
+![https://img.shields.io/badge/Foundry%20VTT-0.5.5%2B-green](https://img.shields.io/badge/Foundry%20VTT-0.5.5%2B-green)
 
 # GM Scene Background
 

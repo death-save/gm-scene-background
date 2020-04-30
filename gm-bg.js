@@ -6,16 +6,18 @@ Hooks.on("renderSceneConfig", (app, html, data) => {
     const gmBGHtml = `
     <p class="notes">This shows the background image currently displayed to you. Use the filepicker to set a new DEFAULT background for the scene, which will be shown to players on Save.</p>
     <div class="form-group">
-	    <label>GM Background Image</label>
-        <button type="button" class="file-picker" data-type="imagevideo" data-target="flags.gm-bg.gm-img" title="Browse Files" tabindex="-1">
-            <i class="fas fa-file-import fa-fw"></i>
-        </button>
-        <input class="image" type="text" name="flags.gm-bg.gm-img" value="${gmFlag || bg}" data-dtype="String" />
+        <label>GM Background Image</label>
+        <div class="form-fields">
+            <button type="button" class="file-picker" data-type="imagevideo" data-target="flags.gm-bg.gm-img" title="Browse Files" tabindex="-1">
+                <i class="fas fa-file-import fa-fw"></i>
+            </button>
+            <input class="image" type="text" name="flags.gm-bg.gm-img" value="${gmFlag ? gmFlag : bg ? bg : ``}" placeholder="GM Background File Path" data-dtype="String" />
+        </div>
     </div>
     <p class="notes">This shows the background image currently displayed to GMs.</p>
     <div class="form-group">
         <label>PC Background Image</label>
-        <input class="image" type="text" name="pc-img" placeholder="File Path" value="${pcFlag || bg}" data-dtype="String" disabled />
+        <input class="image" type="text" name="pc-img" placeholder="None" value="${pcFlag ? pcFlag : bg ? bg : ``}" data-dtype="String" disabled />
         <p class="notes">This is the background image currently displayed to players. Change using the Background Image filepicker.</p>
     </div>
     `
@@ -52,11 +54,10 @@ Hooks.on("canvasInit", async canvas => {
     }
 });
 
-Hooks.on("preUpdateScene", (scene, updateData, options) => {
+Hooks.on("preUpdateScene", (scene, updateData, options, userId) => {
     const bgUpdate = getProperty(updateData, "img");
     //const gmBGUpdate = getProperty(updateData, "flags.gm-bg.gm-img");
 
-    
     if (!bgUpdate) {
         return;
     }
@@ -70,7 +71,7 @@ Hooks.on("preUpdateScene", (scene, updateData, options) => {
     }
 });
 
-Hooks.on("updateScene", (scene, updateData, userId) => {
+Hooks.on("updateScene", (scene, updateData, options, userId) => {
     let changed = new Set(Object.keys(updateData).filter(k => k !== "_id"));
 
     const redraw = [
