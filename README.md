@@ -7,4 +7,4 @@ Allows GMs to set a GM-only background image.
 ## Usage
 Open the Scene Configuration form and set a GM background using the filepicker:
 
-[Video Demo](https://www.youtube.com/watch?v=uxlI7zBYHCc)
+[Video Demo](https://youtu.be/-sw2mVestCM)
