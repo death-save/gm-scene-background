@@ -3,6 +3,10 @@
 ## [Unreleased]
 N/A
 
+## [0.1.3] - 2020-10-04
+### Fixed
+- Module no longer hides map pins when a scene is rendered for the first time due to double rendering the scene (thanks @cole#9640!)
+
 ## [0.1.2] - 2020-04-29
 ### Changed
 - Updated for compatibility with Foundry 0.5.5

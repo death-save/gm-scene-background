@@ -50,7 +50,7 @@ Hooks.on("canvasInit", async canvas => {
     if ( gmFlag && bg !== gmFlag) {
   
         canvas.scene.data.img = gmFlag;
-        return canvas.draw();
+        return;
     }
 });
 
