@@ -1,6 +1,8 @@
 ![https://img.shields.io/badge/Foundry%20VTT-0.7.3%2B-green](https://img.shields.io/badge/Foundry%20VTT-0.7.3%2B-green)
 
-# GM Scene Background
+# (DEPRECATED) GM Scene Background
+
+**This module is no longer being developed, please use [Scenery](https://foundryvtt.com/packages/scenery/) instead!**
 
 Allows GMs to set a GM-only background image that displays in place of the image shown to players.
 
